@@ -1,0 +1,18 @@
+name: Create or update Release PR
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create-release-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ruby-version: 2.7
+
+      - name: Create release PR
+        run: |
+          echo $GITHUB_REF
+
